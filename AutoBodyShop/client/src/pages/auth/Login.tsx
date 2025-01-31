@@ -8,7 +8,7 @@ import { BsLock, BsPerson } from "react-icons/bs";
 import { FaFacebookSquare } from "react-icons/fa";
 import { BsLightningChargeFill } from "react-icons/bs";
 
-import { FindUser } from "../../api/users";
+import { LoginUser } from "../../api/users";
 import style from "./authStyles.module.scss";
 import { HOME_PATH } from "../../routes/consts";
 import { UserContext } from "../../context/UserContext";
@@ -22,21 +22,15 @@ const Login = () => {
 
   const handleSubmit = async (values: User) => {
     try {
-      const response = await FindUser();
+      const response = await LoginUser(values);
 
-      const match: User = response.find(
-        (user: User) =>
-          user.username === values.username && user.password === values.password
-      );
-
-      if (match) {
-        login(match);
-        navigate(HOME_PATH);
-      } else {
-        setError("Invalid Username or Password");
+      {
+        response && login(response);
       }
+      navigate(HOME_PATH);
+      setError(!response ? "Username of password is incorrect" : "");
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

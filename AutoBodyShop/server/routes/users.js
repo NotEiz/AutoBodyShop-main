@@ -45,4 +45,30 @@ router.post("/register", async (req, res) => {
   }
 });
 
+router.post("/login", async (req, res) => {
+  try {
+    const user = { username: req.body.username, password: req.body.password };
+    const con = await client.connect();
+    const data = await con
+      .db("ManoDB")
+      .collection("Users")
+      .findOne({ username: user.username });
+    await con.close();
+
+    if (!data) {
+      return res.status(404).send({ error: "User not found" });
+    }
+
+    const match = await bcrypt.compare(user.password, data.password);
+
+    if (match) {
+      return res.send({ data: data });
+    } else {
+      res.status(404).send({ error: "invalid password" });
+    }
+  } catch (error) {
+    res.status(500).send({ error: "Something went wrong" });
+  }
+});
+
 module.exports = router;
