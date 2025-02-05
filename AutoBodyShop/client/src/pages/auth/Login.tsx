@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { ErrorMessage, Field, Form, Formik } from "formik";
+import { toast } from "react-toastify";
 
 import { FcGoogle } from "react-icons/fc";
 import { BsLock, BsPerson } from "react-icons/bs";
@@ -30,6 +31,7 @@ const Login = () => {
       navigate(HOME_PATH);
       setError(!response ? "Username of password is incorrect" : "");
     } catch (error) {
+      toast.error("something went wrong");
       console.error(error);
     }
   };

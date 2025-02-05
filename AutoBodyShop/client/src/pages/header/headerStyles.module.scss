@@ -1,0 +1,38 @@
+.main{
+     justify-content: end;
+     align-items: center;
+     display: flex;
+     background-color:rgba(0,0,0 ,.2);
+
+     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+     text-align: center;
+}
+
+.linkWrappers{
+     border-right: 2px solid rgb(222, 218, 218);
+     border-left: 2px solid rgb(222, 218, 218);
+     padding: 1em 1.5em;
+     margin-right: 0.3em;
+     transition: all ease-in-out 120ms;
+     height: 100%;
+     width: 4em;
+     &:hover{
+          box-shadow: rgb(219, 218, 218) 20px 0px 25px -5px inset, rgba(219, 218, 218) -20px 0px 25px -5px inset;
+     }
+}
+
+.links{
+
+
+     font-size: 1.3rem;
+     font-weight: 700;
+     text-decoration: none;
+     color: rgb(62, 60, 60);
+     
+     transition: all ease-in-out 200ms;
+
+ &:hover{
+     color: rgb(31, 30, 30);
+
+ }
+}

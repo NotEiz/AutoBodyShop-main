@@ -1,7 +1,13 @@
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
+
+    background-size: cover;
+    height: 100vh;
+    background-position: left;
+    background-image: url(./assets/mainBackground.jpg);
 }
+
 
 input {
   outline: none;
