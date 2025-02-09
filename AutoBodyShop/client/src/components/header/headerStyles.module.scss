@@ -1,0 +1,36 @@
+.main{
+     text-align: center;
+     background-color:rgba(0,0,0 ,.2);
+     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.mainInner{ 
+     margin: 0 2.5em;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+}
+.linkWrapper{
+     display: flex;
+}
+
+.links{
+     padding: 1em 0em;
+     margin: 0em 1em;
+     text-transform:uppercase;
+     color: rgba(201, 198, 198, 0.7);
+     font-size: 1.2rem;
+     text-decoration: none;
+     display: block;
+
+     &:hover{
+          color: rgba(201, 198, 198, 0.9);
+     }
+}
+
+h1{
+     color: rgba(201, 198, 198, 0.7); ;
+     margin: 0;
+     font-weight: 900;
+}
+
