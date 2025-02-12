@@ -14,7 +14,7 @@ const Header = () => {
 
         <div className={style.linkWrapper}>
           {navBarLinks.slice(1, 4).map((link) => (
-            <Link className={style.links} to={link.path}>
+            <Link key={link.path} className={style.links} to={link.path}>
               {link.title}
             </Link>
           ))}
