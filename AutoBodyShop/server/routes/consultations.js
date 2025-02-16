@@ -7,7 +7,7 @@ const { MongoClient } = require("mongodb");
 const URI = process.env.DB_CONNECTION_URI;
 const client = new MongoClient(URI);
 
-router.post("/consultations", async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newConsultation = {
       email: req.body.email,
